@@ -21,4 +21,4 @@ function update_menu_links($items){
   }
   return $items;
 }
-add_filter('wp_nav_menu_items', 'update_menu_links', 10 );
+add_filter('wp_nav_menu_items', 'update_menu_links', 10, 2 );
