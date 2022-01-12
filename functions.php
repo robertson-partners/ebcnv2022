@@ -15,8 +15,8 @@ function update_menu_link($items){
 
   if( !is_front_page() ) {
     foreach($items as $item){
-      if($item->menu_class === "quicklinks"){ // this is the link label your searching for
-        $item->url = home_url( $item->url );
+      if($item->menu_class === "quicklinks") {
+        $item->url = 'https://everybabycountsnv.org/'.$item->url;
       }
     }
   }
