@@ -11,7 +11,7 @@ function avada_lang_setup() {
 }
 add_action( 'after_setup_theme', 'avada_lang_setup' );
 
-function update_menu_links($items){
+function update_menu_links($items, $args){
   if( !is_front_page() ) {
     foreach($items as $item){
       if( in_array('quicklinks', $item->classes) ) {
@@ -21,4 +21,4 @@ function update_menu_links($items){
   }
   return $items;
 }
-add_filter('wp_nav_menu_items', 'update_menu_links', 10, 2 );
+add_filter('wp_nav_menu_objects', 'update_menu_links', 10, 2 );
