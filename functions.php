@@ -11,14 +11,14 @@ function avada_lang_setup() {
 }
 add_action( 'after_setup_theme', 'avada_lang_setup' );
 
-function update_menu_link($items){
+function update_menu_links($items){
   if( !is_front_page() ) {
     foreach($items as $item){
-      if($item->menu_class === "quicklinks") {
+      if( in_array('quicklinks', $item->classes) ) {
         $item->url = 'https://everybabycountsnv.org/'.$item->url;
       }
     }
   }
   return $items;
 }
-add_filter('wp_nav_menu_objects', 'update_menu_link', 10 );
+add_filter('wp_nav_menu_items', 'update_menu_links', 10 );
